@@ -1,0 +1,41 @@
+								 	Disrupt:
+
+Disrupt is a penetration tool devised purely disruption purposes. It currently contains 1 module. Currently in v0.1.0.
+
+Contribution:
+Since there is only 1 modules, users are allowed to contribute more modules. Modules must be purely for disruption purposes. No other modules allowed! Also, if you contribute, please remember to also update README.md, Menu, and Help.
+
+How to contribute?
+Users can contribute to this open source project by forking it, downloading the respository and adding more modules. Again, modules are purely for disruption purposes. No other modules allowed! 
+
+How to run Disrupt:
+ozylol@devbot:~/Desktop/disrupt# sudo python disrupt.py
+[v0.1.0]
+	 ____   _                      _   
+	|    \ |_| ___  ___  _ _  ___ | |_ 
+	|  |  || ||_ -||  _|| | || . ||  _|
+	|____/ |_||___||_|  |___||  _||_|  
+	                         |_|       
+	-==+ [!] Tread lightly... +==-
+	-==+ https://github.com/ozylol +==-
+
+
+	[1] DoS Attack  [3] N/A
+	[2] SMS Bomber  [4] N/A
+
+[5] Help 
+[6] Update
+
+Disrupt > 
+
+Modules:
+Currently Disrupt offers 1 module. If you would like to contribute or add modules, please read more about Contribution.
+
+	SMS Bomber:
+	The SMS Bomber module allows users to send an overflow of threads to victims phones. The threads are sent from Googles smtplib module. It is recommended to send a thread size of 10-15 for faster delivery. A sending thread package can be any size.
+
+	- Carrier lookup can be found here: http://www.freecarrierlookup.com/ 
+
+	The carriers are on an if/elif statement so if you do not see your victims carrier, simply add a new on and update respository.
+
+	I want to give credit to cxdy or Cody Kaczynski for the idea of module [1]. Please go try out his script also: https://github.com/cxdy/pybomber/blob/master/smsbomber.py. 
