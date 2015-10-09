@@ -36,6 +36,6 @@ Currently Disrupt offers 1 module. If you would like to contribute or add module
 
 	- Carrier lookup can be found here: http://www.freecarrierlookup.com/ 
 
-	The carriers are on an if/elif statement so if you do not see your victims carrier, simply add a new on and update respository.
+	The carriers are on an if/elif statement so if you do not see your victims carrier, simply add a new one and update the respository.
 
 	I want to give credit to cxdy or Cody Kaczynski for the idea of module [1]. Please go try out his script also: https://github.com/cxdy/pybomber/blob/master/smsbomber.py. 
