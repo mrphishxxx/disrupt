@@ -20,8 +20,8 @@ ozylol@devbot:~/Desktop/disrupt# sudo python disrupt.py
 	-==+ https://github.com/ozylol +==-
 
 
-	[1] DoS Attack  [3] N/A
-	[2] SMS Bomber  [4] N/A
+	[1] SMS Bomber   [3] N/A
+	[2] N/A          [4] N/A
 
 [5] Help 
 [6] Update
