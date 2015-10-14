@@ -1,6 +1,6 @@
 #!/usr/bin/python
 #----------------------------------------------------------------------------
-#							Main Disrupt Modules 
+#Main Disrupt Modules 
 #----------------------------------------------------------------------------
 #The MIT License (MIT)
 #
@@ -25,6 +25,8 @@
 #THE SOFTWARE.
 import sys
 import traceback
+#from os import getcwd, mkdir, path
+#ys.path.insert(0, getcwd() + '/modules/')
 
 #Utilitys
 from modules.utility.colors import *
@@ -47,27 +49,26 @@ class Disrupt(object):
 
 		if module_choice == '1':
 			try:
-				SMSBomb()
 				self.smsbomber += 1
+				import modules.smsbomber.smsbomber
+				reload(modules.smsbomber.smsbomber)
+				#SMSBomb()
 			except:
-				print'\n[!] Exited with %s modules.' % self.smsbomber
 				self.smsbomber -= 1
+				print'\n[!] Exited with %s modules.' % self.smsbomber
 
-
-		if module_choice == '2':
+		if module_choice == '5':
 			try:
 				help()
 			except:
 				sys.exit()
 
-		
-		if module_choice == '3':
+		if module_choice == '6':
 			try:
 				update()
 			except:
 				sys.exit()
 				
-
 		elif module_choice == '0' or module_choice == 'quit' or module_choice == 'q' or module_choice == 'exit':
 			sys.exit('\n[!] Error, user quit.')
 

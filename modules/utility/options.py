@@ -1,6 +1,6 @@
 #!/usr/bin/python
 #----------------------------------------------------------------------------
-#						 Main Disrupt Options Modules 
+#Main Disrupt Options Modules 
 #----------------------------------------------------------------------------
 #The MIT License (MIT)
 #
@@ -52,11 +52,12 @@ def main_menu():
 def help():
 	print"""
 Usage:
-		Options [5] 	  Display help menu. 
+	
+	Options [5]: Display help menu. 
 
 Disrupt Option:
-		
-		SMS Bomber: 	  Allows users to clog victims sms using smtplib.
+	
+	SMS Bomber:	 Allows users to clog victims sms using smtplib.
 """
 
 #def main_carriers():
