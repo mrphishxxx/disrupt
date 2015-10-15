@@ -21,7 +21,7 @@ ozylol@devbot:~/Desktop/disrupt# sudo python disrupt.py
 
 
 	[1] SMS Bomber   [3] N/A
-	[2] N/A          [4] N/A
+	[2] DoS Attack   [4] N/A
 
 [5] Help 
 [6] Update
@@ -31,7 +31,7 @@ Disrupt >
 Modules:
 Currently Disrupt offers 1 module. If you would like to contribute or add modules, please read more about Contribution.
 
-	SMS Bomber:
+	* SMS Bomber:
 	The SMS Bomber module allows users to send an overflow of threads to victims phones. The threads are sent from Googles smtplib module. It is recommended to send a thread size of 10-15 for faster delivery. A sending thread package can be any size.
 
 	- Carrier lookup can be found here: http://www.freecarrierlookup.com/ 
@@ -39,3 +39,6 @@ Currently Disrupt offers 1 module. If you would like to contribute or add module
 	The carriers are on an if/elif statement so if you do not see your victims carrier, simply add a new one and update the respository.
 
 	I want to give credit to cxdy or Cody Kaczynski for the idea of module [1]. Please go try out his script also: https://github.com/cxdy/pybomber/smsbomber.py. 
+
+	* DoS Attack:
+	Currently in Beta...

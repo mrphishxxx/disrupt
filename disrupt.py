@@ -42,7 +42,8 @@ disrupt_message = '[!] Tread lightly...'
 
 class Disrupt(object):
 	def __init__(self):
-		self.smsbomber = 0                                                  
+		self.smsbomber = 0      
+		self.dos = 0                                            
 	def run_modules(self):
 		main_header()
 		main_menu()
@@ -56,13 +57,18 @@ class Disrupt(object):
 				SMSBomb()
 			except:
 				self.smsbomber -= 1
+				import modules.smsbomber.smsbomber
 				print'\n[!] Exited with %s modules.' % self.smsbomber
+				
 		if module_choice == '2':
 			try:
+				self.dos += 1
 				import modules.dos.dos
 				reload(modules.dos.dos)
 			except:
+				self.dos -= 1 
 				import modules.dos.dos
+				print'\n[!] Exited with %s modules.' % self.dos
 				sys.exit()
 
 		if module_choice == '5':
