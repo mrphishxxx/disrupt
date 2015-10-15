@@ -36,7 +36,6 @@ def update():
 	if ret.code == 200:
 		print colors.bold_crimson+'[!] Updating %s' % URL
 		print reset.reset
-		os.system('git clone %s' % URL)
 		os.system('git checkout %s' % URL)
 		os.system('git pull %s HEAD' % URL)
 		print colors.bold_crimson+'\n[!] Disrupt repository is up to date.'
