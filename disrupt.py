@@ -35,6 +35,7 @@ from modules.utility.update import *
 
 #Modules
 from modules.smsbomber.smsbomber import *
+from modules.dos.dos import *
 
 disrupt_version = '0.1.0'
 disrupt_message = '[!] Tread lightly...'
@@ -52,10 +53,17 @@ class Disrupt(object):
 				self.smsbomber += 1
 				import modules.smsbomber.smsbomber
 				reload(modules.smsbomber.smsbomber)
-				#SMSBomb()
+				SMSBomb()
 			except:
 				self.smsbomber -= 1
 				print'\n[!] Exited with %s modules.' % self.smsbomber
+		if module_choice == '2':
+			try:
+				import modules.dos.dos
+				reload(modules.dos.dos)
+			except:
+				import modules.dos.dos
+				sys.exit()
 
 		if module_choice == '5':
 			try:
