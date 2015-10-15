@@ -23,11 +23,24 @@
 #LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 #OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #THE SOFTWARE.
-import sys
+import os
+import urllib2
 
+from modules.utility.colors import *
 from disrupt import *
 
 URL = 'http://www.github.com/ozylol/disrupt'
+ret = urllib2.urlopen('http://www.github.com/ozylol/disrupt')
 
 def update():
-	print'Modules are up to date.'
+	if ret.code == 200:
+		print colors.bold_crimson+'[!] Updating %s' % URL
+		print reset.reset
+		os.system('git clone %s' % URL)
+		os.system('git checkout %s' % URL)
+		os.system('git pull %s HEAD' % URL)
+		print colors.bold_crimson+'\n[!] Disrupt repository is up to date.'
+		print reset.reset
+	elif ret.code == 404:
+		print colors.bold_crimson+'[!] Error, URL may be wrong of repository does not exist.'
+		sys.exit(reset.reset)
