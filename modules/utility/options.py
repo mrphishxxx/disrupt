@@ -42,8 +42,8 @@ def main_header():
 
 def main_menu():
 	print"""
-	[1] SMS Bomber   [3] N/A
-	[2] DoS Attack   [4] N/A
+	[1] SMS Bomber [2] DoS Attack 
+	[3] N/A        [4] N/A
 
 [5] Help 
 [6] Update
