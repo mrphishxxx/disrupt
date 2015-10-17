@@ -23,6 +23,7 @@
 #LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 #OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #THE SOFTWARE.
+import os
 import sys
 import traceback
 #from os import getcwd, mkdir, path
@@ -31,7 +32,7 @@ import traceback
 #Utilitys
 from modules.utility.colors import *
 from modules.utility.options import *
-from modules.utility.update import *  
+#from modules.utility.update import *  
 
 #Modules
 from modules.smsbomber.smsbomber import *
@@ -52,7 +53,7 @@ class Disrupt(object):
 		if module_choice == '1':
 			try:
 				self.smsbomber += 1
-				reload(modules.smsbomber.smsbomber)
+				#reload(modules.smsbomber.smsbomber)
 				SMSBomb()
 			except:
 				self.smsbomber -= 1
@@ -78,14 +79,14 @@ class Disrupt(object):
 				sys.exit()
 
 		if module_choice == '6':
-			try:
-				update()
-			except:
-				sys.exit()
-				
-		elif module_choice == '0' or module_choice == 'quit' or module_choice == 'q' or module_choice == 'exit':
+			print'Hi'
+
+		elif module_choice == '0' or module_choice == 'quit' or module_choice == 'exit':
 			sys.exit('\n[!] Error, user quit.')
 
 
 if __name__ == '__main__':
+	if not os.geteuid()==0:
+		sys.exit('[*] You need to run as root.')
 	Disrupt().run_modules()
+
