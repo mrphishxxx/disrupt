@@ -32,13 +32,13 @@ Modules:
 Currently Disrupt offers 1 module. If you would like to contribute or add modules, please read more about Contribution.
 
 	* SMS Bomber:
-		The SMS Bomber module allows users to send an overflow of threads to victims phones. The threads are sent from Googles smtplib module. It is recommended to send a thread size of 10-15 for faster delivery. A sending thread package can be any size. Also, in order to overflow a user, the victim needs to have an Iphone. It works with android, but they can block the sender.
+	The SMS Bomber module allows users to send an overflow of threads to victims phones. The threads are sent from Googles smtplib module. It is recommended to send a thread size of 10-15 for faster delivery. A sending thread package can be any size. Also, in order to overflow a user, the victim needs to have an Iphone. It works with android, but they can block the sender.
 
 		- Carrier lookup can be found here: http://www.freecarrierlookup.com/ 
 
 		The carriers are on an if/elif statement so if you do not see your victims carrier, simply add a new one and update the respository.
 
-		I want to give credit to cxdy or Cody Kaczynski for the idea of module [1]. Please go try out his script also: https://github.com/cxdy/pybomber/smsbomber.py. 
+	I want to give credit to cxdy or Cody Kaczynski for the idea of module [1]. Please go try out his script also: https://github.com/cxdy/pybomber/smsbomber.py. 
 
 	* DoS Attack:
 	Currently in Beta...
