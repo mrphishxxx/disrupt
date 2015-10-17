@@ -36,10 +36,9 @@ def update():
 	if ret.code == 200:
 		print colors.bold_crimson+'[!] Updating %s' % URL
 		print reset.reset
-		os.system('git checkout %s' % URL)
-		os.system('git pull %s HEAD' % URL)
-		print colors.bold_crimson+'\n[!] Disrupt repository is up to date.'
-		print reset.reset
+		#os.system('git checkout %s' % URL)
+		os.system('git pull %s' % URL)
+		print colors.bold_crimson+'\n[!] Disrupt repository is up to date.'+reset.reset
 	elif ret.code == 404:
 		print colors.bold_crimson+'[!] Error, URL may be wrong of repository does not exist.'
 		sys.exit(reset.reset)

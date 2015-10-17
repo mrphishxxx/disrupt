@@ -23,16 +23,16 @@
 #LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 #OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #THE SOFTWARE.
+
+#Normal Dependencies
 import os
 import sys
 import traceback
-#from os import getcwd, mkdir, path
-#ys.path.insert(0, getcwd() + '/modules/')
 
 #Utilitys
 from modules.utility.colors import *
 from modules.utility.options import *
-#from modules.utility.update import *  
+from modules.utility.update import *  
 
 #Modules
 from modules.smsbomber.smsbomber import *
@@ -79,14 +79,16 @@ class Disrupt(object):
 				sys.exit()
 
 		if module_choice == '6':
-			print'Hi'
+			try:
+				update()
+			except:
+				sys.exit()
 
 		elif module_choice == '0' or module_choice == 'quit' or module_choice == 'exit':
 			sys.exit('\n[!] Error, user quit.')
 
 
 if __name__ == '__main__':
-	if not os.geteuid()==0:
-		sys.exit('[*] You need to run as root.')
+	if not os.geteuid() == 0:
+		sys.exit(colors.bold_red+'[*] You need to run as root.'+reset.reset)
 	Disrupt().run_modules()
-
