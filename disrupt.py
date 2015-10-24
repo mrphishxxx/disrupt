@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#----------------------------------------------------------------------------
+# ----------------------------------------------------------------------------
 #Main Disrupt Modules 
 #----------------------------------------------------------------------------
 #The MIT License (MIT)
@@ -27,12 +27,11 @@
 #Normal Dependencies
 import os
 import sys
-import traceback
 
 #Utilitys
 from modules.utility.colors import *
 from modules.utility.options import *
-from modules.utility.update import *  
+from modules.utility.update import *
 
 #Modules
 from modules.smsbomber.smsbomber import *
@@ -41,54 +40,59 @@ from modules.smsbomber.smsbomber import *
 disrupt_version = '0.1.0'
 disrupt_message = '[!] Tread lightly...'
 
+
 class Disrupt(object):
-	def __init__(self):
-		self.smsbomber = 0      
-		self.dos = 0                                            
-	def run_modules(self):
-		main_header()
-		main_menu()
-		module_choice = raw_input(colors.bold_crimson+'Disrupt ' + reset.reset+'> ')
+    def __init__(self):
+        self.smsbomber = 0
+        self.dos = 0
 
-		if module_choice == '1':
-			try:
-				self.smsbomber += 1
-				#reload(modules.smsbomber.smsbomber)
-				SMSBomb()
-			except:
-				self.smsbomber -= 1
-				import modules.smsbomber.smsbomber
-			else:
-				print'\n[!] Exited with %s modules.' % self.smsbomber
+    def run_modules(self):
+        main_header()
+        main_menu()
+        module_choice = raw_input(colors.bold_crimson + 'Disrupt ' + reset.reset + '> ')
 
-		if module_choice == '2':
-			try:
-				self.dos += 1
-				reload(modules.dos.dos)
-			except:
-				self.dos -= 1 
-				import modules.dos.dos
-				sys.exit()
-			else:
-				print'\n[!] Exited with %s modules.' % self.dos
+        if module_choice == '1':
+            try:
+                self.smsbomber += 1
+                #reload(modules.smsbomber.smsbomber)
+                SMSBomb()
+            except:
+                self.smsbomber -= 1
+                import modules.smsbomber.smsbomber
+            else:
+                print
+                '\n[!] Exited with %s modules.' % self.smsbomber
 
-		if module_choice == '5':
-			try:
-				help()
-			except:
-				sys.exit()
+        if module_choice == '2':
+            try:
+                self.dos += 1
+                reload(modules.dos.dos)
+            except:
+                self.dos -= 1
+                import modules.dos.dos
 
-		if module_choice == '6':
-			try:
-				update()
-			except:
-				sys.exit()
+                sys.exit()
+            else:
+                print
+                '\n[!] Exited with %s modules.' % self.dos
 
-		elif module_choice == '0' or module_choice == 'quit' or module_choice == 'exit':
-			sys.exit('\n[!] Error, user quit.')
+        if module_choice == '5':
+            try:
+                help()
+            except:
+                sys.exit()
+
+        if module_choice == '6':
+            try:
+                update()
+            except:
+                sys.exit()
+
+        elif module_choice == '0' or module_choice == 'quit' or module_choice == 'exit':
+            sys.exit('\n[!] Error, user quit.')
 
 
 if __name__ == '__main__':
-	if not os.geteuid() == 0:
-		sys.exit(colors.bold_red+'[*] You need to run as root.'+reset.reset)
-	Disrupt().run_modules()
+    if not os.geteuid() == 0:
+        sys.exit(colors.bold_red + '[*] You need to run as root.' + reset.reset)
+    Disrupt().run_modules()
