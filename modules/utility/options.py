@@ -23,12 +23,13 @@
 #LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 #OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #THE SOFTWARE.
+import random
 
 from colors import *
 from disrupt import *
 
 def main_header():
-	print colors.bold_crimson+'[v%s]' % (disrupt_version)
+	print random.choice(colors_random)+'[v%s]' % (disrupt_version)
 	print'\t ____   _                      _   '
 	print'\t|    \ |_| ___  ___  _ _  ___ | |_ '
 	print'\t|  |  || ||_ -||  _|| | || . ||  _|'

@@ -27,6 +27,7 @@
 #Normal Dependencies
 import os
 import sys
+import random
 
 #Utilitys
 from modules.utility.colors import *
@@ -49,7 +50,7 @@ class Disrupt(object):
     def run_modules(self):
         main_header()
         main_menu()
-        module_choice = raw_input(colors.bold_crimson + 'Disrupt ' + reset.reset + '> ')
+        module_choice = raw_input(random.choice(colors_random)+'Disrupt ' + reset.reset + '> ')
 
         if module_choice == '1':
             try:

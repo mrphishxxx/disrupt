@@ -25,7 +25,11 @@
 #THE SOFTWARE.
 
 #Going to implement a random color scheme for main_header
-import random
+
+colors_random = ['\033[0m', '\033[31m', '\033[32m', '\033[32m', '\033[33m',
+				'\033[34m', '\033[35m', '\033[36m', '\033[37m', '\033[93m'
+				'\033[1;37m', '\033[1;31m', '\033[1;32m', '\033[1;33m',
+				'\033[1;34m', '\033[1;38m', '\033[1;35m', '\033[1;36m']
 
 class colors:
 	#Normal Colors
