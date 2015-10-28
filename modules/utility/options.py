@@ -30,17 +30,17 @@ from disrupt import *
 
 def main_header():
 	print random.choice(colors_random)+'[v%s]' % (disrupt_version)
-	print'\t ____   _                      _   '
-	print'\t|    \ |_| ___  ___  _ _  ___ | |_ '
-	print'\t|  |  || ||_ -||  _|| | || . ||  _|'
-	print'\t|____/ |_||___||_|  |___||  _||_|  '
-	print'\t                         |_|       '
-	print'\t-==+ %s +==-' % (disrupt_message)
-	print'\t-==+ https://github.com/ozylol +==-'
+	print random.choice(colors_random)+'\t ____   _                      _   '
+	print random.choice(colors_random)+'\t|    \ |_| ___  ___  _ _  ___ | |_ '
+	print random.choice(colors_random)+'\t|  |  || ||_ -||  _|| | || . ||  _|'
+	print random.choice(colors_random)+'\t|____/ |_||___||_|  |___||  _||_|  '
+	print random.choice(colors_random)+'\t                         |_|       '
+	print random.choice(colors_random)+'\t-==+ %s +==-' % (disrupt_message)
+	print random.choice(colors_random)+'\t-==+ https://github.com/ozylol +==-'
 	print reset.reset 
 
 def main_menu():
-	print"""
+	print random.choice(colors_random)+"""
 	[1] SMS Bomber [2] DoS Attack 
 	[3] N/A        [4] N/A
 
