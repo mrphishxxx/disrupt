@@ -23,7 +23,6 @@
 #LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 #OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #THE SOFTWARE.
-import os
 import urllib2
 import subprocess
 
@@ -37,7 +36,6 @@ def update():
 	if ret.code == 200:
 		print colors.bold_crimson+'[!] Updating %s' % URL
 		print reset.reset
-		#os.system('git pull %s' % URL)
 		subprocess.Popen("git pull", shell=True).wait()
 		print colors.bold_crimson+'\n[!] Disrupt repository is up to date.'+reset.reset
 	elif ret.code == 404:
