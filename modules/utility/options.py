@@ -42,7 +42,6 @@ def main_header():
 def main_menu():
 	print random.choice(colors_random)+"""
 	[1] SMS Bomber [2] DoS Attack 
-	[3] N/A        [4] N/A
 
 [5] Help 
 [6] Update
@@ -57,6 +56,7 @@ Usage:
 Disrupt Option:
 	
 	SMS Bomber:	 Allows users to clog victims sms using smtplib.
+	DoS Attack: Currently in beta.
 """
 
 #def main_carriers():
