@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Voyager v0.1</title>
+  <style type="text/css">
+@import url(http://fonts.googleapis.com/css?family=Bree+Serif);
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+#map {
+  width: 100%;
+  height: 80%;
+}
+.bottom_menu{
+  font-size: 25px;
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+  padding:13px; 
+  font-family: 'Bree Serif', 'serif';
+  color: #000;
+}
+.bottom_menu:hover {
+  text-decoration: underline;
+  color:#3498DB;  
+}
+.search_box{
+  width: 15em;
+  padding: 5.5px;
+  font-family: 'Bree Serif', 'serif';
+  font-size:14px;
+  border:1px solid #3498DB;  
+  border-radius: 3px;
+}
+.search_button {
+  padding: 4px;
+  font-family: 'Bree Serif', 'serif';
+  font-size:14px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  color: #ffffff;
+  border: solid 2px #3498DB; 
+  border-radius: 3px;
+  background: #3498DB;
+}
+.search_button:hover {
+  opacity: .9;
+}
+a[href^="http://maps.google.com/maps"]{display:none !important}
+a[href^="https://maps.google.com/maps"]{display:none !important}
+.gmnoprint a, .gmnoprint span, .gm-style-cc {
+    display:none;
+}
+.gmnoprint div {
+    background:'white' !important;
+}
+</style>
+<script src="https://maps.googleapis.com/maps/api/js?&libraries=places&callback=initmap" async defer></script>
+<script>
+//https://developers.google.com/maps/documentation/javascript/examples/place-radar-search
+var center = {
+  lat:{{lat}}, 
+  lng:-{{lng}}
+};
+var map;
+var infoWindow;
+var service;
+function initmap() {
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: center,
+    zoom: 4,
+    styles: [{
+      stylers: [{ 
+        visibility: 'simplified', 
+      }]
+    }, {
+      elementType: 'labels',
+      stylers: [{ 
+        visibility: 'on'
+      }]
+    }]
+  });
+  infoWindow = new google.maps.InfoWindow();
+  service = new google.maps.places.PlacesService(map);
+  map.addListener('idle', submit);
+}
+function submit() {
+  var search_box = document.getElementById('search_box').value;
+  var request = {
+    bounds: map.getBounds(),
+    keyword: search_box
+  };
+  //if (search_box == null){
+  //}
+  service.radarSearch(request, callback);
+}
+function callback(results, status) {
+  if (status !== google.maps.places.PlacesServiceStatus.OK) {
+    console.error(status);
+    return;
+  }
+  for (var i = 0, result; result = results[i]; i++) {
+    addMarker(result);
+  }
+}
+function addMarker(place) {
+  var blue_dots = {
+    path: google.maps.SymbolPath.CIRCLE,
+    fillOpacity: 10,
+    fillColor: '#3498DB',
+    strokeColor: '#000',
+    strokeWeight: 1.0, 
+    scale: 6
+  }
+  var dots = new google.maps.Marker({
+    map: map,
+    position: place.geometry.location,
+    icon: blue_dots
+    //scaledSize: new google.maps.Size(18, 18)
+  });
+  google.maps.event.addListener(dots, 'click', function() {
+    service.getDetails(place, function(result, status) {
+      if (status !== google.maps.places.PlacesServiceStatus.OK) {
+        console.error(status);
+        return;
+      }
+      var contentString = '<div id="content">'+result.name+'</div>';
+      infoWindow.setContent(contentString);
+      infoWindow.open(map, dots);
+    });
+  });
+}
+</script>
+</head>
+<body>
+<div id="map"></div>
+<center>
+<input type="text" class="search_box" id="search_box" placeholder="Search">
+<input type="submit" class="search_button" value="Submit" id="submit" onClick="submit()">
+<a href="/percapita" class="bottom_menu">Per Capita</a>
+<a href="/chart" class="bottom_menu">Chart</a>
+</center>
+</body>
+</html>
