@@ -7,7 +7,10 @@ import argparse
 
 from core import colors
 from core import logo
-from flask import Flask,abort,render_template
+try:
+	from flask import Flask,abort,render_template
+except:
+	sys.exit('You need to install the requirementes. \n`pip install -r requirements.txt`')
 app = Flask(__name__)
 
 parser = argparse.ArgumentParser()
