@@ -52,8 +52,5 @@ class colors:
 	bold_crimson  = '\033[1;38m'
 	bold_magenta = '\033[1;35m'
 	bold_cyan = '\033[1;36m'
-
-class reset:
-	#Reset
 	reset = "\033[0m" 
 		

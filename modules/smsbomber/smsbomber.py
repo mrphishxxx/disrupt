@@ -45,8 +45,8 @@ def SMSBomb():
     gmail_password = getpass.getpass(prompt='\t[!] Enter Secure Pass: ')
     smtp_server = 'smtp.gmail.com'
     smtp_port = 587
-    msg_from = '\x6a'
-    msg_subject = '\x6a' 
+    msg_from = '\x01'
+    msg_subject = '\x01' 
     #Fix menu issue
     print"""
 	[1] AT&T
@@ -83,8 +83,8 @@ def SMSBomb():
     session.ehlo()
     session.login(gmail_username, gmail_password)
     for i in xrange(int(thread_send)):
-    	session.sendmail(msg_from, msg_to, thread_sending)
-    print'[!] Threads sent: %s bytes to: %s' % (len(packet),msg_to)
+        session.sendmail(msg_from, msg_to, thread_sending)
+    print"[!] Threads sent '%s' bytes to '%s'" % (len(packet),msg_to)
     session.quit()
     reset_smsbomber_module = raw_input("\nWould you like to send some more threads (Y/n): ")
     if reset_smsbomber_module == 'Y' or reset_smsbomber_module == 'y':
