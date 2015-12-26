@@ -10,7 +10,7 @@ from core import logo
 try:
 	from flask import Flask,abort,render_template
 except:
-	sys.exit('You need to install the requirementes. \n`pip install -r requirements.txt`')
+  sys.exit('You need to install the requirementes. \n`pip install -r requirements.txt`')
 app = Flask(__name__)
 
 parser = argparse.ArgumentParser()
@@ -23,6 +23,7 @@ args = parser.parse_args()
 lat = 33.7550
 lng = 84.3900
 
+#load base.html
 @app.route("/")
 def base():
 	return render_template('base.html', lat=lat, lng=lng)
@@ -36,13 +37,10 @@ def Chart():
 	return render_template('chart.html')
 
 def main():
+  #no need for running as root at this time
 	#if not os.geteuid() == 0:
 		#sys.exit(colors.bold_red+'[*] You must run as root'+colors.reset)
-	try:
-		print logo.logo
-	except:
-		print logo.logo
-		sys.exit()
+    print logo.logo
 main()
 
 def options():
