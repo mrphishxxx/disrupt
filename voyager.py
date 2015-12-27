@@ -32,9 +32,9 @@ def base():
 def PerCapita():
 	return render_template('percapita.html')
 
-@app.route("/chart")
+@app.route("/piechart")
 def Chart():
-	return render_template('chart.html')
+	return render_template('piechart.html')
 
 def main():
   #no need for running as root at this time
