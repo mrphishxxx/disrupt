@@ -8,5 +8,5 @@ Voyager is a real-time crowdsourcing web application with an implemented geo map
 #Version
 Beta v0.1
 
-#Release Date
+#Full Release Date
 Currently this project is in beta, so the estimated release date is in March.
