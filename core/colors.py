@@ -1,4 +1,4 @@
-white = '\033[0m' 
+white = '\033[37m' 
 red = '\033[31m'   
 green = '\033[32m'   
 orange = '\033[33m'  

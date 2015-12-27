@@ -1,7 +1,7 @@
 #!/usr/bin/python
 import colors
 
-logo = colors.bold_blue+'''
+logo = colors.bold_white+'''
  _____                               
 |  |  | ___  _ _  ___  ___  ___  ___ 
 |  |  || . || | || .'|| . || -_||  _|

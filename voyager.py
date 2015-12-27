@@ -10,7 +10,7 @@ from core import logo
 try:
 	from flask import Flask,abort,render_template
 except:
-  sys.exit('You need to install the requirementes. \n`pip install -r requirements.txt`')
+  sys.exit(color.bold_red+'You need to install the requirementes. \n`pip install -r requirements.txt`'+colors.reset)
 app = Flask(__name__)
 
 parser = argparse.ArgumentParser()
