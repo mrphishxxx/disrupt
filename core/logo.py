@@ -1,7 +1,7 @@
 #!/usr/bin/python
 import colors
 
-logo = colors.bold_cyan+'''
+logo = colors.bold_red+'''
  _____                               
 |  |  | ___  _ _  ___  ___  ___  ___ 
 |  |  || . || | || .'|| . || -_||  _|
