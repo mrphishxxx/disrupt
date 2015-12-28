@@ -3,8 +3,6 @@
 #Voyager 
 Voyager is a real-time crowdsourcing web application with an implemented geo map for querying stores, people, items, etc. 
 
-![map](images/map.png)
-
 #Version
 Beta v0.1
 
