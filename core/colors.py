@@ -1,3 +1,4 @@
+#!/usr/bin/python
 white = '\033[37m' 
 red = '\033[31m'   
 green = '\033[32m'   

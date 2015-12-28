@@ -61,6 +61,7 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
 <script src="https://maps.googleapis.com/maps/api/js?&libraries=places&callback=initmap" async defer></script>
 <script>
 //https://developers.google.com/maps/documentation/javascript/examples/place-radar-search
+//var colors;
 var center = {
   lat:{{lat}}, 
   lng:-{{lng}}
@@ -107,10 +108,11 @@ function callback(results, status) {
   }
 }
 function addMarker(place) {
+  //colors = {{randomcolors}}
   var blue_dots = {
     path: google.maps.SymbolPath.CIRCLE,
     fillOpacity: 10,
-    fillColor: '#3498DB',
+    fillColor: '#f4a871',
     strokeColor: '#000',
     strokeWeight: 1.0, 
     scale: 6

@@ -1,4 +1,35 @@
 {% block content %}
-<h1>Test Pie Chart</h1>
-<a href="/">Home</a>
+<html>
+  <head>
+  	<title>Voyager v0.1</title>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      //https://developers.google.com/chart/interactive/docs/gallery/piechart?hl=en
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(chart);
+      function chart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Chart', 'Crowdsourcing Pie Chart'],
+          ['Test1', 1],
+          ['Test2', 1],
+          ['Test3', 1],
+          ['Test4', 1],
+          ['Test5', 1],
+        ]);
+       var options = {
+          pieHole: 0.2,
+        };
+        var chart = new google.visualization.PieChart(document.getElementById('chart'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+  	<h1>Voyager Pie Chart v0.1</h1>
+  	<center>
+    <div id="chart" style="width: 800px; height: 500px;"></div>
+    <a href="/">Home</a>
+    </center>
+  </body>
+</html>
 {% endblock %}
