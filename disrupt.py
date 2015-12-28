@@ -94,6 +94,4 @@ class Disrupt(object):
 
 
 if __name__ == '__main__':
-    if not os.geteuid() == 0:
-        sys.exit(colors.bold_red + '[*] You need to run as root.' + reset.reset)
     Disrupt().run_modules()
