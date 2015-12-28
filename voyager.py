@@ -33,15 +33,15 @@ args = parser.parse_args()
 #load base.html
 @app.route("/")
 def base():
-	return render_template('base.html',lat=lat,lng=lng,randomcolors=randomcolors)
+  return render_template('base.html',lat=lat,lng=lng,randomcolors=randomcolors)
 
 @app.route("/percapita")
 def PerCapita():
-	return render_template('percapita.html')
+  return render_template('percapita.html')
 
 @app.route("/piechart")
 def Chart():
-	return render_template('piechart.html')
+  return render_template('piechart.html')
 
 @app.route("/map")
 def Map():
