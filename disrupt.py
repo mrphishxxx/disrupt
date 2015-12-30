@@ -94,4 +94,8 @@ class Disrupt(object):
 
 
 if __name__ == '__main__':
+<<<<<<< HEAD
     Disrupt().run_modules()
+=======
+    Disrupt().run_modules()
+>>>>>>> origin/master
