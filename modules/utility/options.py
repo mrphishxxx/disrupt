@@ -37,7 +37,6 @@ def main_header():
 	print random.choice(colors_random)+'\t                         |_|       '
 	print random.choice(colors_random)+'\t-==+ %s +==-' % (disrupt_message)
 	print random.choice(colors_random)+'\t-==+ https://github.com/ozylol +==-'
-	print reset.reset 
 
 def main_menu():
 	print random.choice(colors_random)+"""

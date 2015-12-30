@@ -50,7 +50,7 @@ class Disrupt(object):
     def run_modules(self):
         main_header()
         main_menu()
-        module_choice = raw_input(random.choice(colors_random)+'Disrupt ' + reset.reset + '> ')
+        module_choice = raw_input(random.choice(colors_random)+'Disrupt ' + reset + '> ')
 
         if module_choice == '1':
             try:
@@ -94,6 +94,4 @@ class Disrupt(object):
 
 
 if __name__ == '__main__':
-    if not os.geteuid() == 0:
-        sys.exit(colors.bold_red + '[*] You need to run as root.' + reset.reset)
     Disrupt().run_modules()
