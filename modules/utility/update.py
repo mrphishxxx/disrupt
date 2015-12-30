@@ -23,21 +23,21 @@
 #LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 #OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #THE SOFTWARE.
+import os
+import time
 import urllib2
-import subprocess
-
-from modules.utility.colors import *
 from disrupt import *
 
-URL = 'http://www.github.com/ozylol/disrupt'
+url = 'http://www.github.com/ozylol/disrupt.git'
 ret = urllib2.urlopen('http://www.github.com/ozylol/disrupt')
 
 def update():
 	if ret.code == 200:
-		print colors.bold_crimson+'[!] Updating %s' % URL
-		print reset.reset
-		subprocess.Popen("git pull", shell=True).wait()
-		print colors.bold_crimson+'\n[!] Disrupt repository is up to date.'+reset.reset
+		print '[!] Updating {}\n'.format(url)
+		time.sleep(1)
+		os.system('git reset --hard HEAD')
+		os.system('git pull {}'.format(url))
+		print '\n[!] Disrupt is up to date!'
 	elif ret.code == 404:
-		print colors.bold_crimson+'[!] Error, URL may be wrong of repository does not exist.'
-		sys.exit(reset.reset)
+		print '[!] Error, URL may be wrong of repository does not exist?'
+update()
