@@ -93,9 +93,5 @@ class Disrupt(object):
             sys.exit('\n[!] Error, user quit.')
 
 
-if __name__ == '__main__':
-<<<<<<< HEAD
+if __name__ == '__main__': 
     Disrupt().run_modules()
-=======
-    Disrupt().run_modules()
->>>>>>> origin/master
