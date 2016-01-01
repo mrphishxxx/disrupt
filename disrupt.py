@@ -27,10 +27,10 @@ import os
 import sys
 import random
 import argparse
-from modules.utility.colors import *
-from modules.utility.options import *
-from modules.smsbomber.smsbomber import *
-#from modules.dos.dos import *
+from modules.colors import *
+from modules.options import *
+from modules.smsbomber import *
+#from modules..dos import *
 
 disrupt_version = '0.1.0'
 disrupt_message = '[!] Tread lightly...'
@@ -44,7 +44,6 @@ class Disrupt(object):
     def __init__(self):
         self.smsbomber = 0
         self.dos = 0
-
     def run_modules(self):
         main_header()
         main_menu()
@@ -58,24 +57,24 @@ class Disrupt(object):
                 SMSBomb()
             except:
                 self.smsbomber -= 1
-                import modules.smsbomber.smsbomber
+                import modules.smsbomber
             else:
                 print'\n[!] Exited with %s modules.' % self.smsbomber
-        if module_choice == '2':
+        elif module_choice == '2':
             try:
                 self.dos += 1
-                reload(modules.dos.dos)
+                reload(modules.dos)
             except:
                 self.dos -= 1
-                import modules.dos.dos
+                import modules.dos
             else:
                 print
                 '\n[!] Exited with %s modules.' % self.dos
-        if args.update:
+        elif args.update:
             try:
-                reload(modules.utility.update)
+                reload(modules.update)
             except:
-                import modules.utility.update
+                import modules.update
          
         elif module_choice == '0' or module_choice == 'quit' or module_choice == 'exit':
             sys.exit('\n[!] Error, user quit.')

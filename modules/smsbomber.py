@@ -26,9 +26,8 @@
 import sys
 import getpass
 import smtplib as s
-
-from modules.utility.options import *
-from modules.utility.colors import *
+import options
+import colors
 from disrupt import *
 
 #Total 93 bytes for this packet

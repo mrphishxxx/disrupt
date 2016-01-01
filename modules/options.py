@@ -25,7 +25,7 @@
 #THE SOFTWARE.
 import random
 
-from colors import *
+import colors
 from disrupt import *
 
 def main_header():
