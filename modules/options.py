@@ -41,8 +41,7 @@ def main_menu():
 	print random.choice(colors_random)+"""
 	[1] SMS Bomber [2] DoS Attack 
 
--h, --help    show this help message and exit
--u, --update  Update repository
+3) Update
 """
 
 def help():

@@ -25,16 +25,19 @@
 #THE SOFTWARE.
 import os
 import sys
+import time
 import random
+import urllib2
 import argparse
 from modules.colors import *
 from modules.options import *
 from modules.smsbomber import *
-from modules.update import *
 #from modules..dos import *
 
 disrupt_version = '0.1.0'
 disrupt_message = '[!] Tread lightly...'
+url = 'http://www.github.com/ozylol/disrupt.git'
+ret = urllib2.urlopen('http://www.github.com/ozylol/disrupt')
 
 parser = argparse.ArgumentParser()
 parser.add_argument(
@@ -71,11 +74,16 @@ class Disrupt(object):
             else:
                 print
                 '\n[!] Exited with %s modules.' % self.dos
-        elif args.update:
-            try:
-                reload(modules.update)
-            except:
-                import modules.update
+        elif module_choice == '3':
+            if ret.code == 200:
+                print '[!] Updating {}\n'.format(url)
+                time.sleep(1)
+                os.system('git reset --hard HEAD')
+                os.system('git pull {}'.format(url))
+                print '\n[!] Disrupt is up to date!'
+                Disrupt().run_modules()
+            elif ret.code == 404:
+                print '[!] Error, URL may be wrong of repository does not exist?'
          
         elif module_choice == '0' or module_choice == 'quit' or module_choice == 'exit':
             sys.exit('\n[!] Error, user quit.')
