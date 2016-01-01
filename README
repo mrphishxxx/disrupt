@@ -19,11 +19,9 @@ ozylol@devbot:~/Desktop/disrupt# sudo python disrupt.py
 	-==+ [!] Tread lightly... +==-
 	-==+ https://github.com/ozylol +==-
 
-
 	[1] SMS Bomber [2] DoS Attack 
 
-[5] Help 
-[6] Update
+3) Update
 
 Disrupt > 
 
@@ -36,8 +34,6 @@ Currently Disrupt offers 1 module. If you would like to contribute or add module
 	- Carrier lookup can be found here: http://www.freecarrierlookup.com/ 
 
 	The carriers are on an if/elif statement so if you do not see your victims carrier, simply add a new one and update the respository.
-
-	I want to give credit to cxdy or Cody Kaczynski for the idea of module [1]. Please go try out his script also: https://github.com/cxdy/pybomber/smsbomber.py. 
 
 	* DoS Attack:
 	Currently in Beta...
