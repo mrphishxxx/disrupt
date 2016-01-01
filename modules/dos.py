@@ -26,6 +26,5 @@
 import sys
 import socket
 import urllib2
-from disrupt import *
 
 print'[!] DoS in Beta. Coming Soon...'

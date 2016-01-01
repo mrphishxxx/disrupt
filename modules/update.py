@@ -26,7 +26,6 @@
 import os
 import time
 import urllib2
-from disrupt import *
 
 url = 'http://www.github.com/ozylol/disrupt.git'
 ret = urllib2.urlopen('http://www.github.com/ozylol/disrupt')

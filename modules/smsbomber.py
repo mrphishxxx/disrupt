@@ -28,7 +28,6 @@ import getpass
 import smtplib as s
 import options
 import colors
-from disrupt import *
 
 #Total 93 bytes for this packet
 packet = """
