@@ -82,14 +82,13 @@ def SMSBomb():
     session.login(gmail_username, gmail_password)
     for i in xrange(int(thread_send)):
         session.sendmail(msg_from, msg_to, thread_sending)
-    print"[!] Threads sent '%s'" % (len(packet))
+        print"[!] Threads sent '%s'" % (len(packet))
     session.quit()
     reset_smsbomber_module = raw_input("\nWould you like to send some more threads (Y/n): ")
     if reset_smsbomber_module == 'Y' or reset_smsbomber_module == 'y':
     	SMSBomb()
     elif reset_smsbomber_module == 'n' or reset_smsbomber_module == 'N':
     	sys.exit()
-    	
 
 if __name__ == '__main__':
 	SMSBomb()
