@@ -23,24 +23,22 @@
 #LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 #OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #THE SOFTWARE.
-
-#Normal Dependencies
 import os
 import sys
 import random
-
-#Utilitys
+import argparse
 from modules.utility.colors import *
 from modules.utility.options import *
-from modules.utility.update import *
-
-#Modules
 from modules.smsbomber.smsbomber import *
 #from modules.dos.dos import *
 
 disrupt_version = '0.1.0'
 disrupt_message = '[!] Tread lightly...'
 
+parser = argparse.ArgumentParser()
+parser.add_argument(
+  '-u', '--update', help="Update repository", action='store_true')
+args = parser.parse_args()
 
 class Disrupt(object):
     def __init__(self):
@@ -50,8 +48,9 @@ class Disrupt(object):
     def run_modules(self):
         main_header()
         main_menu()
-        module_choice = raw_input(random.choice(colors_random)+'Disrupt ' + reset + '> ')
-
+        bash = random.choice(colors_random)+'Disrupt '
+        bash += '> '+reset
+        module_choice = raw_input(bash)
         if module_choice == '1':
             try:
                 self.smsbomber += 1
@@ -61,9 +60,7 @@ class Disrupt(object):
                 self.smsbomber -= 1
                 import modules.smsbomber.smsbomber
             else:
-                print
-                '\n[!] Exited with %s modules.' % self.smsbomber
-
+                print'\n[!] Exited with %s modules.' % self.smsbomber
         if module_choice == '2':
             try:
                 self.dos += 1
@@ -71,27 +68,17 @@ class Disrupt(object):
             except:
                 self.dos -= 1
                 import modules.dos.dos
-
-                sys.exit()
             else:
                 print
                 '\n[!] Exited with %s modules.' % self.dos
-
-        if module_choice == '5':
+        if args.update:
             try:
-                help()
+                reload(modules.utility.update)
             except:
-                sys.exit()
-
-        if module_choice == '6':
-            try:
-                update()
-            except:
-                sys.exit()
-
+                import modules.utility.update
+         
         elif module_choice == '0' or module_choice == 'quit' or module_choice == 'exit':
             sys.exit('\n[!] Error, user quit.')
-
 
 if __name__ == '__main__': 
     Disrupt().run_modules()
