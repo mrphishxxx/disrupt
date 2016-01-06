@@ -23,12 +23,10 @@
 #LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 #OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #THE SOFTWARE.
-import os
 import sys
 import time
 import random
 import urllib2
-import argparse
 from modules.colors import *
 from modules.options import *
 from modules.smsbomber import *
@@ -38,11 +36,6 @@ disrupt_version = '0.1.0'
 disrupt_message = '[!] Tread lightly...'
 url = 'http://www.github.com/ozylol/disrupt.git'
 ret = urllib2.urlopen('http://www.github.com/ozylol/disrupt')
-
-parser = argparse.ArgumentParser()
-parser.add_argument(
-  '-u', '--update', help="Update repository", action='store_true')
-args = parser.parse_args()
 
 class Disrupt(object):
     def __init__(self):
