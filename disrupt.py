@@ -49,7 +49,7 @@ class Disrupt(object):
         if module_choice == '1':
             try:
                 self.smsbomber += 1
-                #reload(modules.smsbomber.smsbomber)
+                #reload(modules.smsbomber)
                 SMSBomb()
             except:
                 self.smsbomber -= 1
@@ -64,8 +64,7 @@ class Disrupt(object):
                 self.dos -= 1
                 import modules.dos
             else:
-                print
-                '\n[!] Exited with %s modules.' % self.dos
+                print '\n[!] Exited with %s modules.' % self.dos
         elif module_choice == '3':
             if ret.code == 200:
                 print '[!] Updating {}\n'.format(url)
@@ -76,7 +75,6 @@ class Disrupt(object):
                 Disrupt().run_modules()
             elif ret.code == 404:
                 print '[!] Error, URL may be wrong of repository does not exist?'
-         
         elif module_choice == '0' or module_choice == 'quit' or module_choice == 'exit':
             sys.exit('\n[!] Error, user quit.')
 
