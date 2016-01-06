@@ -30,7 +30,6 @@ import urllib2
 from modules.colors import *
 from modules.options import *
 from modules.smsbomber import *
-#from modules..dos import *
 
 disrupt_version = '0.1.0'
 disrupt_message = '[!] Tread lightly...'
