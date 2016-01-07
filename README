@@ -1,12 +1,12 @@
 Disrupt:
 
-Disrupt is a penetration tool devised purely disruption purposes. It currently contains 1 module. Currently in v0.1.0.
+Disrupt is a penetration tool devised purely for disruption purposes.
 
 Contribution:
 Since there is only 1 modules, users are allowed to contribute more modules. Modules must be purely for disruption purposes. No other modules allowed! Also, if you contribute, please remember to also update README.md, Menu, and Help.
 
 How to contribute?
-Users can contribute to this open source project by forking it, downloading the respository and adding more modules. Again, modules are purely for disruption purposes. No other modules allowed! 
+Anybody can contribute, though modules must be for disruption purposes only. No other modules allowed! 
 
 How to run Disrupt:
 ozylol@devbot:~/Desktop/disrupt# sudo python disrupt.py
