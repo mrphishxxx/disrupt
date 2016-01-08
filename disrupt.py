@@ -51,7 +51,7 @@ class Disrupt(object):
                 self.smsbomber += 1
                 #reload(modules.smsbomber)
                 SMSBomb()
-            except:
+            except Exception:
                 self.smsbomber -= 1
                 import modules.smsbomber
             else:
@@ -60,7 +60,7 @@ class Disrupt(object):
             try:
                 self.dos += 1
                 reload(modules.dos)
-            except:
+            except Exception:
                 self.dos -= 1
                 import modules.dos
             else:
