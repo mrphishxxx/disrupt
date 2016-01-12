@@ -39,6 +39,7 @@ ret = urllib2.urlopen('http://www.github.com/ozylol/disrupt')
 
 class Disrupt(object):
     def __init__(self):
+        self.url_error = False
         self.smsbomber = 0
         self.dos = 0
     def run_modules(self):
@@ -73,8 +74,10 @@ class Disrupt(object):
                 os.system('git reset --hard HEAD')
                 os.system('git pull {}'.format(url))
                 print '\n[!] Disrupt is up to date!'
+                self.url_error = False
                 Disrupt().run_modules()
             elif ret.code == 404:
+                self.url_error = True
                 print '[!] Error, URL may be wrong of repository does not exist?'
         elif module_choice == '0' or module_choice == 'quit' or module_choice == 'exit':
             sys.exit('\n[!] Error, user quit.')
