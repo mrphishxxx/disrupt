@@ -29,41 +29,17 @@ from disrupt import *
 
 def main_header():
 	print random.choice(colors_random)+'[v%s]' % (disrupt_version)
-	print random.choice(colors_random)+'\t ____   _                      _   '
-	print random.choice(colors_random)+'\t|    \ |_| ___  ___  _ _  ___ | |_ '
-	print random.choice(colors_random)+'\t|  |  || ||_ -||  _|| | || . ||  _|'
-	print random.choice(colors_random)+'\t|____/ |_||___||_|  |___||  _||_|  '
-	print random.choice(colors_random)+'\t                         |_|       '
-	print random.choice(colors_random)+'\t-==+ %s +==-' % (disrupt_message)
-	print random.choice(colors_random)+'\t-==+ https://github.com/ozylol +==-'
+	print '\t ____   _                      _   '
+	print '\t|    \ |_| ___  ___  _ _  ___ | |_ '
+	print '\t|  |  || ||_ -||  _|| | || . ||  _|'
+	print '\t|____/ |_||___||_|  |___||  _||_|  '
+	print '\t                         |_|       '
+	print '\t-==+ %s +==-' % (disrupt_message)
+	print '\t-==+ https://github.com/ozylol +==-'
 
 def main_menu():
 	print random.choice(colors_random)+"""
-	[1] SMS Bomber [2] DoS Attack 
+	[1] SMS Bomber [2] DoS Attack (N/A)
 
 3) Update
 """
-
-def help():
-	print"""
-Usage:
-	
-	Options [5]: Display help menu. 
-
-Disrupt Option:
-	
-	SMS Bomber:	 Allows users to clog victims sms using smtplib.
-	DoS Attack: Currently in beta.
-"""
-
-#def main_carriers():
-#	print color.bold_crimson+"""
-#	[1] AT&T
-#	[2] Boost Mobile
-#	[3] MetroPCS
-#	[4] Sprint
-#	[5] T-Mobile
-#	[6] Virgin Mobile
-#	[7] Verizon
-#	"""
-#	reset.reset
