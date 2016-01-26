@@ -3,10 +3,7 @@ Disrupt:
 Disrupt is a penetration tool devised purely for disruption purposes.
 
 Contribution:
-Since there is only 1 modules, users are allowed to contribute more modules. Modules must be purely for disruption purposes. No other modules allowed! Also, if you contribute, please remember to also update README.md, Menu, and Help.
-
-How to contribute?
-Anybody can contribute, though modules must be for disruption purposes only. No other modules allowed! 
+Since there is only 1 modules, users are allowed to contribute more modules. Modules must be purely for disruption purposes. No other modules allowed!
 
 How to run Disrupt:
 ozylol@devbot:~/Desktop/disrupt# sudo python disrupt.py
@@ -29,8 +26,8 @@ Modules:
 Currently Disrupt offers 1 module. If you would like to contribute or add modules, please read more about Contribution.
 
 * SMS Bomber:
-The SMS Bomber module allows users to send an overflow of threads to victims phones. The threads are sent from Googles smtplib module. It is recommended to send a thread size of 10-15 for faster delivery. A sending thread package can be any size. Also, in order to overflow a user, the victim must have an iPhone. Though it works with android, the victim can block the sender whereas on iPhone, they cannot.
+The SMS Bomber module allows users to send an overflow of threads to victims phones. The threads are sent from Googles smtplib module.It is recommended to send a thread size of 10-15 for faster delivery. A sending thread package can be any size. Also, in order to overflow a user, the victim must have an iPhone. Though it works with android, the victim can block the sender whereas on iPhone, they cannot.
 
 - Carrier lookup can be found here: http://www.freecarrierlookup.com/ 
 
-- The carriers are set on an `if/elif` statement so if you do not see your victims carrier, simply add a new one and update the respository.
+- The carriers are set on an `if/elif` statement so if you do not see your victims carrier, simply add a new one and update the      respository.
