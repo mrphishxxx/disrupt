@@ -30,4 +30,4 @@ The SMS Bomber module allows users to send an overflow of threads to victims pho
 
 	- Carrier lookup can be found here: http://www.freecarrierlookup.com/ 
 
-	- The carriers are set on an `if/elif` statement so if you do not see your victims carrier, simply add a new one and update the respository.
+	- The carriers are set on an `if/elif` statement so if you do not see your victims carrier, simply add a new one and update the          respository.
