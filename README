@@ -6,7 +6,7 @@ Contribution:
 Since there is only 1 modules, users are allowed to contribute more modules. Modules must be purely for disruption purposes. No other modules allowed!
 
 How to run Disrupt:
-ozylol@devbot:~/Desktop/disrupt# sudo python disrupt.py
+ozylol@devbot:~/Desktop/disrupt# python disrupt.py
 [v0.1.0]
 	 ____   _                      _   
 	|    \ |_| ___  ___  _ _  ___ | |_ 
